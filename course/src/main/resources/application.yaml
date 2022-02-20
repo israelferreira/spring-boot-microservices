@@ -1,5 +1,14 @@
 server:
-  port: 8080
+  port: 8082
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka/
+    fetch-registry: true
+    register-with-eureka: true
 
 spring:
   application:
@@ -11,7 +20,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDB106Dialect
+        dialect: org.hibernate.dialect.MariaDB103Dialect
     jmx:
       enabled: false
   datasource:
